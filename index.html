@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portofolio Alya Rahma Nisa | MPLB SMK Cyber Media</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Poppins & Quicksand -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Quicksand:wght@500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Poppins', 'sans-serif'],
+                        display: ['Quicksand', 'sans-serif'],
+                    },
+                    colors: {
+                        brandPink: {
+                            light: '#FDF2F8',
+                            DEFAULT: '#EC4899',
+                            bright: '#FF6B9D',
+                        },
+                        brandPurple: {
+                            light: '#F3E8FF',
+                            DEFAULT: '#8B5CF6',
+                            deep: '#6D28D9',
+                        }
+                    },
+                    animation: {
+                        'float': 'float 4s ease-in-out infinite',
+                        'wiggle': 'wiggle 2.5s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-12px)' },
+                        },
+                        wiggle: {
+                            '0%, 100%': { transform: 'rotate(-4deg)' },
+                            '50%': { transform: 'rotate(4deg)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .bg-grid-pattern {
+            background-image: radial-gradient(#ec489933 1.5px, transparent 1.5px);
+            background-size: 28px 28px;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            border: 2px solid rgba(255, 255, 255, 0.9);
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-pink-50 via-purple-50 to-fuchsia-100 text-slate-800 font-sans selection:bg-pink-400 selection:text-white overflow-x-hidden">
+
+    <!-- Navbar -->
+    <header class="fixed top-0 w-full z-50 transition-all duration-300 bg-white/80 backdrop-blur-md border-b border-pink-100 shadow-sm">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16 md:h-20">
+                <!-- Logo -->
+                <a href="#hero" class="flex items-center gap-2 group">
+                    <div class="w-10 h-10 rounded-2xl bg-gradient-to-tr from-pink-500 to-purple-600 flex items-center justify-center text-white shadow-md group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-cat text-lg"></i>
+                    </div>
+                    <span class="font-display font-bold text-xl bg-gradient-to-r from-pink-600 to-purple-600 bg-clip-text text-transparent">
+                        Alya<span class="text-pink-500">.meow</span>
+                    </span>
+                </a>
+
+                <!-- Desktop Menu -->
+                <nav class="hidden md:flex items-center space-x-8 font-medium text-sm text-slate-600">
+                    <a href="#hero" class="hover:text-pink-600 transition-colors">Home</a>
+                    <a href="#about" class="hover:text-pink-600 transition-colors">About</a>
+                    <a href="#skills" class="hover:text-pink-600 transition-colors">Skills</a>
+                    <a href="#projects" class="hover:text-pink-600 transition-colors">Projects</a>
+                    <a href="#contact" class="px-5 py-2.5 rounded-full bg-gradient-to-r from-pink-500 to-purple-600 text-white font-semibold shadow-md hover:shadow-pink-300/60 hover:-translate-y-0.5 transition-all">
+                        Contact Me
+                    </a>
+                </nav>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="md:hidden p-2 rounded-xl text-purple-700 hover:bg-pink-100 focus:outline-none">
+                    <i class="fa-solid fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white/95 backdrop-blur-lg border-b border-pink-100 px-6 py-4 space-y-3 shadow-lg">
+            <a href="#hero" class="block py-2 text-slate-700 hover:text-pink-600 font-medium">Home</a>
+            <a href="#about" class="block py-2 text-slate-700 hover:text-pink-600 font-medium">About</a>
+            <a href="#skills" class="block py-2 text-slate-700 hover:text-pink-600 font-medium">Skills</a>
+            <a href="#projects" class="block py-2 text-slate-700 hover:text-pink-600 font-medium">Projects</a>
+            <a href="#contact" class="block py-2 text-pink-600 font-bold">Contact Me</a>
+        </div>
+    </header>
+
+    <!-- 1. HERO SECTION -->
+    <section id="hero" class="relative min-h-screen flex items-center pt-24 pb-16 bg-grid-pattern overflow-hidden">
+        <!-- Decorative Blobs -->
+        <div class="absolute top-24 left-10 w-64 h-64 bg-pink-300/40 rounded-full blur-3xl -z-10"></div>
+        <div class="absolute bottom-16 right-10 w-80 h-80 bg-purple-400/30 rounded-full blur-3xl -z-10"></div>
+
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <!-- Left Content -->
+                <div class="lg:col-span-7 text-center lg:text-left space-y-6">
+                    <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/90 border border-pink-200 shadow-sm text-sm font-semibold text-purple-700">
+                        <i class="fa-solid fa-paw text-pink-500 animate-bounce"></i>
+                        <span>Portofolio Digital • MPLB Enthusiast</span>
+                    </div>
+
+                    <h1 class="font-display text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight text-slate-800">
+                        Hai! Saya <br>
+                        <span class="bg-gradient-to-r from-pink-500 via-fuchsia-500 to-purple-600 bg-clip-text text-transparent">
+                            Alya Rahma Nisa
+                        </span>
+                    </h1>
+
+                    <p class="text-base sm:text-lg text-slate-600 leading-relaxed max-w-2xl mx-auto lg:mx-0 bg-white/70 p-5 rounded-2xl border border-pink-100 shadow-sm">
+                        "Hallo, selamat datang di website portofolio saya, website ini dibuat untuk menaruh seluruh project yang saya buat !"
+                    </p>
+
+                    <div class="flex flex-wrap items-center justify-center lg:justify-start gap-4 pt-2">
+                        <a href="#projects" class="px-7 py-3.5 rounded-full bg-gradient-to-r from-pink-500 to-purple-600 text-white font-semibold shadow-lg shadow-pink-500/30 hover:shadow-purple-500/40 hover:-translate-y-1 transition-all flex items-center gap-2">
+                            <span>Lihat Project Saya</span>
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                        <a href="#about" class="px-7 py-3.5 rounded-full bg-white text-purple-700 border-2 border-purple-200 font-semibold hover:bg-purple-50 hover:border-purple-400 transition-all">
+                            Tentang Saya
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Right Content: Foto dengan Bingkai Telinga Kucing -->
+                <div class="lg:col-span-5 flex justify-center">
+                    <div class="relative w-72 h-72 sm:w-80 sm:h-80 animate-float">
+                        <!-- Cat Ears SVG -->
+                        <svg class="absolute -top-11 left-0 w-full h-24 z-0 pointer-events-none" viewBox="0 0 300 100" fill="none">
+                            <!-- Left Ear -->
+                            <path d="M35 90 L55 15 L115 65 Z" fill="#EC4899" stroke="#FFFFFF" stroke-width="6" stroke-linejoin="round"/>
+                            <path d="M50 75 L62 32 L98 63 Z" fill="#FBCFE8"/>
+                            <!-- Right Ear -->
+                            <path d="M265 90 L245 15 L185 65 Z" fill="#8B5CF6" stroke="#FFFFFF" stroke-width="6" stroke-linejoin="round"/>
+                            <path d="M250 75 L238 32 L202 63 Z" fill="#E9D5FF"/>
+                        </svg>
+
+                        <!-- Main Profile Photo Container -->
+                        <div class="relative z-10 w-full h-full rounded-full p-2.5 bg-gradient-to-tr from-pink-500 via-fuchsia-400 to-purple-600 shadow-2xl">
+                            <div class="w-full h-full rounded-full overflow-hidden bg-pink-100 border-4 border-white relative">
+                                <!-- Ganti URL src di bawah ini dengan foto asli Anda -->
+                                <img src="https://images.unsplash.com/photo-1517849845537-4d257902454a?auto=format&fit=crop&w=600&q=80" 
+                                     alt="Foto Alya Rahma Nisa" 
+                                     class="w-full h-full object-cover">
+                            </div>
+                        </div>
+
+                        <!-- Floating Cute Cat Badge -->
+                        <div class="absolute -bottom-3 -left-3 z-20 bg-white px-4 py-2 rounded-2xl shadow-lg border-2 border-pink-200 flex items-center gap-2 animate-wiggle">
+                            <span class="text-2xl">🐱</span>
+                            <div class="text-xs">
+                                <p class="font-bold text-purple-700">SMK Cyber Media</p>
+                                <p class="text-pink-500 font-medium">Jurusan MPLB</p>
+                            </div>
+                        </div>
+
+                        <!-- Floating Paw Badge -->
+                        <div class="absolute top-6 -right-4 z-20 w-12 h-12 rounded-full bg-gradient-to-r from-purple-500 to-pink-500 text-white flex items-center justify-center shadow-lg border-2 border-white">
+                            <i class="fa-solid fa-paw text-lg"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 2. ABOUT SECTION -->
+    <section id="about" class="py-20 relative">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <span class="text-pink-600 font-bold tracking-wider uppercase text-xs bg-pink-100 px-3 py-1 rounded-full">
+                    <i class="fa-solid fa-cat mr-1"></i> Kenalan Lebih Dekat
+                </span>
+                <h2 class="font-display text-3xl sm:text-4xl font-bold text-slate-800 mt-3">
+                    Tentang <span class="text-purple-600">Saya</span>
+                </h2>
+            </div>
+
+            <div class="glass-card rounded-3xl p-8 sm:p-10 shadow-xl relative overflow-hidden">
+                <!-- Decorative Cat Silhouette Corner -->
+                <div class="absolute -right-6 -bottom-6 text-purple-200/50 text-9xl pointer-events-none">
+                    <i class="fa-solid fa-cat"></i>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-center relative z-10">
+                    <div class="md:col-span-4 flex flex-col items-center text-center p-6 rounded-2xl bg-gradient-to-b from-pink-100/80 to-purple-100/80 border border-pink-200">
+                        <div class="w-20 h-20 rounded-2xl bg-white shadow-md flex items-center justify-center text-4xl mb-4">
+                            🎓
+                        </div>
+                        <h3 class="font-display font-bold text-lg text-purple-800">SMK Cyber Media</h3>
+                        <p class="text-sm text-pink-600 font-semibold mt-1">Siswi Aktif</p>
+                        <div class="mt-4 w-full pt-4 border-t border-pink-200/70 text-xs text-slate-600 space-y-1">
+                            <p class="font-semibold text-purple-700">Program Keahlian:</p>
+                            <p>Manajemen Perkantoran dan Layanan Bisnis (MPLB)</p>
+                        </div>
+                    </div>
+
+                    <div class="md:col-span-8 space-y-4 text-slate-600 leading-relaxed">
+                        <h3 class="font-display text-2xl font-bold text-slate-800">
+                            Halo! Saya <span class="text-pink-600">Alya</span>, Calon Profesional Administrasi Modern ✨
+                        </h3>
+                        <p>
+                            Saat ini saya sedang menempuh pendidikan sebagai siswi di <strong class="text-purple-700">SMK Cyber Media</strong> dengan mengambil jurusan <strong class="text-pink-600">MPLB (Manajemen Perkantoran dan Layanan Bisnis)</strong>.
+                        </p>
+                        <p>
+                            Di jurusan MPLB, saya belajar banyak hal tentang bagaimana mengelola operasional perkantoran yang efektif, tata kelola surat-menyurat, kearsipan digital maupun fisik, pelayanan prima kepada klien, hingga penguasaan perangkat lunak perkantoran modern.
+                        </p>
+                        <p>
+                            Saya adalah pribadi yang teliti, terorganisir, senang belajar hal baru, dan tentu saja sangat menyukai hal-hal bertema kucing! 🐾
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. SKILLS SECTION -->
+    <section id="skills" class="py-20 bg-white/50 relative">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-14">
+                <span class="text-purple-600 font-bold tracking-wider uppercase text-xs bg-purple-100 px-3 py-1 rounded-full">
+                    <i class="fa-solid fa-paw mr-1"></i> Kemampuan & Keahlian
+                </span>
+                <h2 class="font-display text-3xl sm:text-4xl font-bold text-slate-800 mt-3">
+                    My <span class="text-pink-600">Skills</span>
+                </h2>
+                <p class="text-slate-500 mt-2 max-w-xl mx-auto text-sm sm:text-base">
+                    Kompetensi utama yang saya kuasai di bidang Manajemen Perkantoran dan Layanan Bisnis.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Skill 1: Microsoft Word -->
+                <div class="glass-card p-6 rounded-3xl shadow-md hover:shadow-xl hover:-translate-y-1.5 transition-all group border-pink-100">
+                    <div class="w-14 h-14 rounded-2xl bg-pink-100 text-pink-600 flex items-center justify-center text-2xl mb-4 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-file-word"></i>
+                    </div>
+                    <h3 class="font-display font-bold text-xl text-slate-800 mb-2">Microsoft Word</h3>
+                    <p class="text-sm text-slate-600 leading-relaxed">
+                        Pembuatan surat resmi bisnis, laporan perkantoran, mail merge, serta pemformatan dokumen profesional yang rapi dan terstruktur.
+                    </p>
+                </div>
+
+                <!-- Skill 2: Microsoft Excel -->
+                <div class="glass-card p-6 rounded-3xl shadow-md hover:shadow-xl hover:-translate-y-1.5 transition-all group border-purple-100">
+                    <div class="w-14 h-14 rounded-2xl bg-purple-100 text-purple-600 flex items-center justify-center text-2xl mb-4 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-file-excel"></i>
+                    </div>
+                    <h3 class="font-display font-bold text-xl text-slate-800 mb-2">Microsoft Excel</h3>
+                    <p class="text-sm text-slate-600 leading-relaxed">
+                        Pengolahan data administrasi, penggunaan rumus fungsi (VLOOKUP, IF, SUMIFS), rekapitulasi anggaran kas kecil, dan pembuatan grafik laporan.
+                    </p>
+                </div>
+
+                <!-- Skill 3: Microsoft PowerPoint -->
+                <div class="glass-card p-6 rounded-3xl shadow-md hover:shadow-xl hover:-translate-y-1.5 transition-all group border-pink-100">
+                    <div class="w-14 h-14 rounded-2xl bg-fuchsia-100 text-fuchsia-600 flex items-center justify-center text-2xl mb-4 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-file-powerpoint"></i>
+                    </div>
+                    <h3 class="font-display font-bold text-xl text-slate-800 mb-2">Microsoft PowerPoint</h3>
+                    <p class="text-sm text-slate-600 leading-relaxed">
+                        Merancang slide presentasi bisnis yang menarik, informatif, komunikatif, dan mudah dipahami oleh audiens.
+                    </p>
+                </div>
+
+                <!-- Skill 4: Komunikasi Bilingual -->
+                <div class="glass-card p-6 rounded-3xl shadow-md hover:shadow-xl hover:-translate-y-1.5 transition-all group border-purple-100">
+                    <div class="w-14 h-14 rounded-2xl bg-purple-100 text-purple-600 flex items-center justify-center text-2xl mb-4 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-comments"></i>
+                    </div>
+                    <h3 class="font-display font-bold text-xl text-slate-800 mb-2">Komunikasi (ID & EN)</h3>
+                    <p class="text-sm text-slate-600 leading-relaxed">
+                        Mampu berkomunikasi secara lisan maupun tulisan dengan baik dan sopan menggunakan Bahasa Indonesia maupun Bahasa Inggris dalam lingkungan bisnis.
+                    </p>
+                </div>
+
+                <!-- Skill 5: Mengelola Administrasi -->
+                <div class="glass-card p-6 rounded-3xl shadow-md hover:shadow-xl hover:-translate-y-1.5 transition-all group border-pink-100">
+                    <div class="w-14 h-14 rounded-2xl bg-pink-100 text-pink-600 flex items-center justify-center text-2xl mb-4 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-clipboard-check"></i>
+                    </div>
+                    <h3 class="font-display font-bold text-xl text-slate-800 mb-2">Manajemen Administrasi</h3>
+                    <p class="text-sm text-slate-600 leading-relaxed">
+                        Mengatur jadwal kegiatan kantor, pencatatan surat masuk & keluar, notulensi rapat, serta pelayanan administrasi yang cekatan.
+                    </p>
+                </div>
+
+                <!-- Skill 6: Menyimpan Arsip -->
+                <div class="glass-card p-6 rounded-3xl shadow-md hover:shadow-xl hover:-translate-y-1.5 transition-all group border-purple-100">
+                    <div class="w-14 h-14 rounded-2xl bg-fuchsia-100 text-fuchsia-600 flex items-center justify-center text-2xl mb-4 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-folder-open"></i>
+                    </div>
+                    <h3 class="font-display font-bold text-xl text-slate-800 mb-2">Pengelolaan & Penyimpanan Arsip</h3>
+                    <p class="text-sm text-slate-600 leading-relaxed">
+                        Mengklasifikasikan, mengindeks, dan menyimpan dokumen penting secara sistematis (sistem abjad, tanggal, wilayah) maupun arsip digital.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. PROJECT SECTION -->
+    <section id="projects" class="py-20 relative">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-10">
+                <span class="text-pink-600 font-bold tracking-wider uppercase text-xs bg-pink-100 px-3 py-1 rounded-full">
+                    <i class="fa-solid fa-cat mr-1"></i> Karya & Tugas Praktik
+                </span>
+                <h2 class="font-display text-3xl sm:text-4xl font-bold text-slate-800 mt-3">
+                    My <span class="text-purple-600">Projects</span>
+                </h2>
+                <p class="text-slate-500 mt-2 max-w-xl mx-auto text-sm sm:text-base">
+                    Kumpulan project dan hasil praktik jurusan MPLB yang telah saya kerjakan.
+                </p>
+
+                <!-- Filter Buttons -->
+                <div class="flex flex-wrap justify-center gap-2 mt-6" id="filter-buttons">
+                    <button data-filter="all" class="filter-btn active px-5 py-2 rounded-full text-sm font-semibold bg-gradient-to-r from-pink-500 to-purple-600 text-white shadow-md transition-all">
+                        Semua Project
+                    </button>
+                    <button data-filter="administrasi" class="filter-btn px-5 py-2 rounded-full text-sm font-semibold bg-white text-slate-600 hover:bg-pink-50 border border-pink-200 transition-all">
+                        Administrasi & Arsip
+                    </button>
+                    <button data-filter="office" class="filter-btn px-5 py-2 rounded-full text-sm font-semibold bg-white text-slate-600 hover:bg-pink-50 border border-pink-200 transition-all">
+                        Ms. Office
+                    </button>
+                    <button data-filter="komunikasi" class="filter-btn px-5 py-2 rounded-full text-sm font-semibold bg-white text-slate-600 hover:bg-pink-50 border border-pink-200 transition-all">
+                        Presentasi & Bisnis
+                    </button>
+                </div>
+            </div>
+
+            <!-- Projects Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="projects-grid">
+                <!-- Project Card 1 -->
+                <div class="project-card glass-card rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all flex flex-col justify-between group" data-category="administrasi">
+                    <div>
+                        <div class="h-44 bg-gradient-to-tr from-pink-400 to-purple-500 p-6 flex flex-col justify-between text-white relative overflow-hidden">
+                            <i class="fa-solid fa-cat absolute -right-4 -bottom-4 text-7xl text-white/20 group-hover:scale-110 transition-transform"></i>
+                            <span class="self-start px-3 py-1 rounded-full bg-white/25 backdrop-blur-sm text-xs font-semibold">
+                                Kearsipan Digital
+                            </span>
+                            <h3 class="font-display font-bold text-xl relative z-10">Sistem Pengarsipan Surat Masuk & Keluar</h3>
+                        </div>
+                        <div class="p-6">
+                            <p class="text-sm text-slate-600 leading-relaxed">
+                                Merancang sistem pencatatan buku agenda surat masuk dan keluar beserta pengkodean arsip sistem tanggal dan abjad untuk efisiensi pencarian dokumen.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="px-6 pb-6 pt-2 flex items-center justify-between">
+                        <span class="text-xs font-semibold text-purple-600 bg-purple-100 px-3 py-1 rounded-lg">Excel & Arsip</span>
+                        <button onclick="openModal('Sistem Pengarsipan Surat Masuk & Keluar', 'Project praktik pengelolaan arsip kantor menggunakan sistem buku agenda berpasangan dan penyimpanan digital berbasis folder terindeks sehingga dokumen dapat ditemukan dalam waktu kurang dari 1 menit.', 'Microsoft Excel, Sistem Indeks Arsip')" class="text-sm font-bold text-pink-600 hover:text-purple-700 flex items-center gap-1">
+                            Detail <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Project Card 2 -->
+                <div class="project-card glass-card rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all flex flex-col justify-between group" data-category="office">
+                    <div>
+                        <div class="h-44 bg-gradient-to-tr from-purple-500 to-fuchsia-500 p-6 flex flex-col justify-between text-white relative overflow-hidden">
+                            <i class="fa-solid fa-paw absolute -right-4 -bottom-4 text-7xl text-white/20 group-hover:scale-110 transition-transform"></i>
+                            <span class="self-start px-3 py-1 rounded-full bg-white/25 backdrop-blur-sm text-xs font-semibold">
+                                Ms. Excel
+                            </span>
+                            <h3 class="font-display font-bold text-xl relative z-10">Laporan Keuangan Kas Kecil (Petty Cash)</h3>
+                        </div>
+                        <div class="p-6">
+                            <p class="text-sm text-slate-600 leading-relaxed">
+                                Penyusunan pembukuan dana kas kecil metode imprest menggunakan rumus otomatis Excel lengkap dengan rekapitulasi pengeluaran bulanan.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="px-6 pb-6 pt-2 flex items-center justify-between">
+                        <span class="text-xs font-semibold text-pink-600 bg-pink-100 px-3 py-1 rounded-lg">Excel Formulas</span>
+                        <button onclick="openModal('Laporan Keuangan Kas Kecil (Petty Cash)', 'Membuat template pembukuan kas kecil (Petty Cash) otomatis menggunakan fungsi SUMIF, IF, dan validasi data untuk meminimalisir kesalahan pencatatan transaksi harian kantor.', 'Microsoft Excel, Administrasi Keuangan')" class="text-sm font-bold text-pink-600 hover:text-purple-700 flex items-center gap-1">
+                            Detail <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Project Card 3 -->
+                <div class="project-card glass-card rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all flex flex-col justify-between group" data-category="komunikasi">
+                    <div>
+                        <div class="h-44 bg-gradient-to-tr from-fuchsia-500 to-pink-500 p-6 flex flex-col justify-between text-white relative overflow-hidden">
+                            <i class="fa-solid fa-cat absolute -right-4 -bottom-4 text-7xl text-white/20 group-hover:scale-110 transition-transform"></i>
+                            <span class="self-start px-3 py-1 rounded-full bg-white/25 backdrop-blur-sm text-xs font-semibold">
+                                Komunikasi Bisnis
+                            </span>
+                            <h3 class="font-display font-bold text-xl relative z-10">Korespondensi Bisnis Bilingual & Pitch Deck</h3>
+                        </div>
+                        <div class="p-6">
+                            <p class="text-sm text-slate-600 leading-relaxed">
+                                Pembuatan dokumen penawaran kerja sama dalam Bahasa Indonesia & Inggris menggunakan Mail Merge Word serta presentasi profil perusahaan.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="px-6 pb-6 pt-2 flex items-center justify-between">
+                        <span class="text-xs font-semibold text-purple-600 bg-purple-100 px-3 py-1 rounded-lg">Word & PPT</span>
+                        <button onclick="openModal('Korespondensi Bisnis Bilingual & Pitch Deck', 'Menyusun surat penawaran bisnis (Business Offer Letter) dalam dua bahasa menggunakan fitur Mail Merge di Microsoft Word, serta merancang slide presentasi layanan bisnis menggunakan PowerPoint.', 'Microsoft Word, PowerPoint, English & Indonesian')" class="text-sm font-bold text-pink-600 hover:text-purple-700 flex items-center gap-1">
+                            Detail <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. CONTACT ME SECTION -->
+    <section id="contact" class="py-20 relative">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="glass-card rounded-3xl p-8 sm:p-12 shadow-xl border-2 border-pink-200 text-center relative overflow-hidden">
+                <!-- Cute Cat Ears Top Decoration -->
+                <div class="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-gradient-to-tr from-pink-500 to-purple-600 text-white text-3xl shadow-lg mb-4 animate-bounce">
+                    🐱
+                </div>
+
+                <h2 class="font-display text-3xl sm:text-4xl font-bold text-slate-800">
+                    Let's <span class="text-pink-600">Connect!</span>
+                </h2>
+                <p class="text-slate-600 mt-3 max-w-lg mx-auto text-sm sm:text-base">
+                    Ingin melihat keseharian, kegiatan saya, atau berdiskusi seputar project? Yuk kunjungi sosial media dan kontak saya di bawah ini!
+                </p>
+
+                <!-- Social Media Cards -->
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-5 mt-10">
+                    <!-- Instagram -->
+                    <a href="https://instagram.com/niss.alyaa" target="_blank" rel="noopener noreferrer" 
+                       class="p-6 rounded-2xl bg-white hover:bg-gradient-to-br hover:from-pink-500 hover:to-purple-600 text-slate-800 hover:text-white border border-pink-200 shadow-md hover:shadow-xl hover:-translate-y-1 transition-all group">
+                        <div class="w-12 h-12 mx-auto rounded-xl bg-pink-100 text-pink-600 group-hover:bg-white/20 group-hover:text-white flex items-center justify-center text-2xl mb-3 transition-colors">
+                            <i class="fa-brands fa-instagram"></i>
+                        </div>
+                        <h3 class="font-display font-bold text-base">Instagram</h3>
+                        <p class="text-sm text-pink-600 group-hover:text-pink-100 font-medium mt-1">@niss.alyaa</p>
+                    </a>
+
+                    <!-- TikTok -->
+                    <a href="https://tiktok.com/@ay4.aa" target="_blank" rel="noopener noreferrer" 
+                       class="p-6 rounded-2xl bg-white hover:bg-gradient-to-br hover:from-purple-600 hover:to-pink-500 text-slate-800 hover:text-white border border-purple-200 shadow-md hover:shadow-xl hover:-translate-y-1 transition-all group">
+                        <div class="w-12 h-12 mx-auto rounded-xl bg-purple-100 text-purple-600 group-hover:bg-white/20 group-hover:text-white flex items-center justify-center text-2xl mb-3 transition-colors">
+                            <i class="fa-brands fa-tiktok"></i>
+                        </div>
+                        <h3 class="font-display font-bold text-base">TikTok</h3>
+                        <p class="text-sm text-purple-600 group-hover:text-purple-100 font-medium mt-1">@ay4.aa</p>
+                    </a>
+
+                    <!-- Email -->
+                    <div class="p-6 rounded-2xl bg-white border border-fuchsia-200 shadow-md hover:shadow-xl hover:-translate-y-1 transition-all flex flex-col justify-between">
+                        <div>
+                            <div class="w-12 h-12 mx-auto rounded-xl bg-fuchsia-100 text-fuchsia-600 flex items-center justify-center text-2xl mb-3">
+                                <i class="fa-solid fa-envelope"></i>
+                            </div>
+                            <h3 class="font-display font-bold text-base text-slate-800">Email</h3>
+                            <p class="text-xs text-slate-600 font-medium mt-1 break-all">alyaa.rrahmanisaa@gmail.com</p>
+                        </div>
+                        <div class="mt-3 flex justify-center gap-2">
+                            <a href="mailto:alyaa.rrahmanisaa@gmail.com" class="text-xs px-3 py-1.5 rounded-full bg-pink-500 text-white font-semibold hover:bg-pink-600 transition-colors">
+                                Kirim Email
+                            </a>
+                            <button onclick="copyEmail()" class="text-xs px-3 py-1.5 rounded-full bg-purple-100 text-purple-700 font-semibold hover:bg-purple-200 transition-colors">
+                                Salin
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Copy Toast Notification -->
+                <div id="copy-toast" class="hidden mt-4 inline-block px-4 py-2 rounded-full bg-purple-700 text-white text-xs font-semibold shadow-md">
+                    ✨ Alamat email berhasil disalin!
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. FOOTER -->
+    <footer class="bg-white/90 border-t border-pink-200 pt-12 pb-8">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-6 pb-8 border-b border-pink-100">
+                <!-- Brand -->
+                <div class="flex items-center gap-2">
+                    <span class="text-2xl">🐾</span>
+                    <span class="font-display font-bold text-xl bg-gradient-to-r from-pink-600 to-purple-600 bg-clip-text text-transparent">
+                        Alya Rahma Nisa
+                    </span>
+                </div>
+
+                <!-- All Section Navigation Links -->
+                <ul class="flex flex-wrap justify-center gap-6 text-sm font-medium text-slate-600">
+                    <li><a href="#hero" class="hover:text-pink-600 transition-colors">Hero / Home</a></li>
+                    <li><a href="#about" class="hover:text-pink-600 transition-colors">About</a></li>
+                    <li><a href="#skills" class="hover:text-pink-600 transition-colors">Skills</a></li>
+                    <li><a href="#projects" class="hover:text-pink-600 transition-colors">Projects</a></li>
+                    <li><a href="#contact" class="hover:text-pink-600 transition-colors">Contact Me</a></li>
+                </ul>
+            </div>
+
+            <!-- Copyright & Custom Footer Text -->
+            <div class="pt-6 text-center">
+                <p class="text-sm sm:text-base font-semibold text-purple-800">
+                    dibuat dengan 💜oleh Alya
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Project Detail Modal -->
+    <div id="project-modal" class="fixed inset-0 z-50 hidden items-center justify-center bg-slate-900/50 backdrop-blur-sm p-4">
+        <div class="bg-white rounded-3xl max-w-md w-full p-6 sm:p-8 shadow-2xl border-2 border-pink-200 relative animate-fade-in">
+            <button onclick="closeModal()" class="absolute top-4 right-4 w-9 h-9 rounded-full bg-pink-100 text-pink-600 hover:bg-pink-500 hover:text-white flex items-center justify-center transition-colors">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <div class="text-3xl mb-2">🐱✨</div>
+            <h3 id="modal-title" class="font-display font-bold text-xl text-purple-800 mb-3">Judul Project</h3>
+            <p id="modal-desc" class="text-sm text-slate-600 leading-relaxed mb-4">Deskripsi detail project.</p>
+            <div class="p-3 rounded-xl bg-pink-50 border border-pink-100">
+                <span class="text-xs font-bold text-pink-600 block">Tools & Keahlian:</span>
+                <span id="modal-tools" class="text-xs text-slate-700 font-medium">Tools</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Interactive JavaScript -->
+    <script>
+        // 1. Mobile Menu Toggle
+        const mobileBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Tutup mobile menu saat link diklik
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // 2. Project Filter Functionality
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const projectCards = document.querySelectorAll('.project-card');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Reset styling tombol
+                filterBtns.forEach(b => {
+                    b.classList.remove('bg-gradient-to-r', 'from-pink-500', 'to-purple-600', 'text-white', 'shadow-md');
+                    b.classList.add('bg-white', 'text-slate-600', 'border', 'border-pink-200');
+                });
+
+                // Aktifkan tombol yang diklik
+                btn.classList.remove('bg-white', 'text-slate-600', 'border', 'border-pink-200');
+                btn.classList.add('bg-gradient-to-r', 'from-pink-500', 'to-purple-600', 'text-white', 'shadow-md');
+
+                const filterValue = btn.getAttribute('data-filter');
+
+                projectCards.forEach(card => {
+                    if (filterValue === 'all' || card.getAttribute('data-category') === filterValue) {
+                        card.style.display = 'flex';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // 3. Project Detail Modal
+        const modal = document.getElementById('project-modal');
+        function openModal(title, desc, tools) {
+            document.getElementById('modal-title').textContent = title;
+            document.getElementById('modal-desc').textContent = desc;
+            document.getElementById('modal-tools').textContent = tools;
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+        }
+
+        function closeModal() {
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+        }
+
+        // Tutup modal jika klik di luar box
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) closeModal();
+        });
+
+        // 4. Copy Email to Clipboard
+        function copyEmail() {
+            navigator.clipboard.writeText('alyaa.rrahmanisaa@gmail.com');
+            const toast = document.getElementById('copy-toast');
+            toast.classList.remove('hidden');
+            setTimeout(() => {
+                toast.classList.add('hidden');
+            }, 3000);
+        }
+    </script>
+</body>
+</html>
